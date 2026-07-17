@@ -1,0 +1,251 @@
+/* ==========================================================
+   Vacation Planner · DXC
+   Tokens: púrpura DXC #5F249F sobre superficies frías claras.
+   Tipografía: IBM Plex Sans (UI) + IBM Plex Mono (fechas/códigos).
+   Firma visual: la "tira de días" coloreada por tipo de ausencia,
+   herencia directa de la matriz del Excel de origen.
+   ========================================================== */
+:root {
+  --ink: #241a3d;
+  --ink-soft: #5c5474;
+  --primary: #5f249f;
+  --primary-deep: #47187a;
+  --primary-tint: #f1eaf9;
+  --surface: #f7f6fa;
+  --card: #ffffff;
+  --border: #e4e1ee;
+  --danger: #c0392b;
+  --ok: #16a085;
+  --warn: #b9770e;
+  --radius: 10px;
+  --mono: 'IBM Plex Mono', monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* ---------- Barra superior ---------- */
+.topbar {
+  background: var(--primary-deep);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 20px;
+  height: 56px;
+}
+.topbar .brand {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.topbar .brand span { color: #cdb4ec; font-weight: 500; }
+.topbar nav { display: flex; gap: 4px; margin-left: 12px; }
+.topbar button.link {
+  background: none;
+  border: none;
+  color: #ddd0f0;
+  font: inherit;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.topbar button.link:hover { background: rgba(255,255,255,0.1); color: #fff; }
+.topbar button.link.active { background: rgba(255,255,255,0.16); color: #fff; font-weight: 600; }
+.topbar .who {
+  margin-left: auto;
+  font-size: 13px;
+  color: #cdb4ec;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ---------- Layout ---------- */
+.page { max-width: 960px; margin: 0 auto; padding: 28px 20px 60px; }
+.page h1 { font-size: 22px; font-weight: 700; margin: 0 0 4px; }
+.page .sub { color: var(--ink-soft); margin: 0 0 24px; font-size: 14px; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+/* ---------- Formularios ---------- */
+label { display: block; font-size: 13px; font-weight: 600; margin: 12px 0 4px; }
+input, select, textarea {
+  width: 100%;
+  padding: 9px 11px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font: inherit;
+  background: #fff;
+  color: var(--ink);
+}
+input:focus, select:focus, textarea:focus, button:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 1px;
+}
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
+@media (max-width: 560px) { .grid2 { grid-template-columns: 1fr; } }
+
+button.primary {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 18px;
+}
+button.primary:hover { background: var(--primary-deep); }
+button.ghost {
+  background: #fff;
+  color: var(--primary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 7px 13px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+button.ghost:hover { border-color: var(--primary); }
+button.ghost.danger { color: var(--danger); }
+button:disabled { opacity: 0.55; cursor: not-allowed; }
+
+.msg { padding: 10px 14px; border-radius: 8px; margin: 14px 0 0; font-size: 14px; }
+.msg.error { background: #fdeceb; color: var(--danger); }
+.msg.ok { background: #e6f5f1; color: #0e6655; }
+
+/* ---------- Autenticación ---------- */
+.auth-wrap {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(600px 300px at 85% -10%, #efe4fb 0%, transparent 60%),
+    var(--surface);
+  padding: 24px;
+}
+.auth-card { width: 100%; max-width: 420px; }
+.auth-card.wide { max-width: 640px; }
+.auth-card .logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary-deep);
+  margin-bottom: 2px;
+}
+.auth-card .logo span { color: var(--ink-soft); font-weight: 400; font-size: 15px; }
+.auth-switch { margin-top: 16px; font-size: 14px; color: var(--ink-soft); }
+.auth-switch a { color: var(--primary); font-weight: 600; cursor: pointer; }
+
+/* ---------- Solicitudes ---------- */
+.req-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 14px;
+  align-items: center;
+  padding: 14px 0;
+  border-top: 1px solid var(--border);
+}
+.req-row:first-of-type { border-top: none; }
+.req-dates { font-family: var(--mono); font-size: 13px; white-space: nowrap; }
+.req-meta { min-width: 0; }
+.req-meta .type { font-weight: 600; font-size: 14px; }
+.req-meta .comment {
+  color: var(--ink-soft);
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.req-actions { display: flex; gap: 8px; align-items: center; }
+
+/* Firma: tira de días heredada de la matriz del Excel */
+.strip { display: flex; gap: 2px; margin-top: 6px; }
+.strip .day {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+}
+.strip .day.off { background: var(--border); }
+
+.badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 99px;
+  text-transform: capitalize;
+}
+.badge.draft { background: #fdf3e3; color: var(--warn); }
+.badge.approved { background: #e6f5f1; color: #0e6655; }
+.badge.canceled { background: #ededf0; color: var(--ink-soft); }
+.badge.pending { background: #fdf3e3; color: var(--warn); }
+.badge.active { background: #e6f5f1; color: #0e6655; }
+.badge.disabled, .badge.rejected { background: #fdeceb; color: var(--danger); }
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+}
+.chip .dot { width: 10px; height: 10px; border-radius: 3px; }
+
+/* ---------- Tablas admin ---------- */
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th {
+  text-align: left;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+  padding: 8px 10px;
+  border-bottom: 2px solid var(--border);
+}
+td { padding: 10px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+.filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; }
+.filters > * { flex: 1; min-width: 140px; }
+.tabs { display: flex; gap: 4px; margin-bottom: 18px; border-bottom: 2px solid var(--border); }
+.tabs button {
+  background: none;
+  border: none;
+  font: inherit;
+  font-weight: 600;
+  color: var(--ink-soft);
+  padding: 10px 14px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+}
+.tabs button.active { color: var(--primary); border-bottom-color: var(--primary); }
+
+.report-num {
+  font-family: var(--mono);
+  font-size: 40px;
+  font-weight: 500;
+  color: var(--primary-deep);
+}
+.empty { color: var(--ink-soft); text-align: center; padding: 30px 0; }
+.mono { font-family: var(--mono); font-size: 13px; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .card { animation: rise 0.25s ease-out; }
+  @keyframes rise { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; } }
+}

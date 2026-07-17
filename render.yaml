@@ -1,0 +1,32 @@
+# Blueprint de Render.com — despliega backend y frontend juntos (plan gratuito).
+# Si algún nombre de servicio ya está ocupado, cámbialo aquí (en ambos lugares).
+services:
+  - type: web
+    name: vacation-planner-api-dxc
+    runtime: python
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    # El seed corre en cada arranque: si la base está vacía (el disco del plan
+    # gratuito es efímero), recrea catálogos, feriados y el admin automáticamente.
+    startCommand: python seed.py; uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: CORS_ORIGINS
+        value: "*"
+      - key: PYTHON_VERSION
+        value: "3.12.0"
+
+  - type: web
+    name: vacation-planner-web-dxc
+    runtime: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: vacation-planner-api-dxc
+          envVarKey: RENDER_EXTERNAL_URL

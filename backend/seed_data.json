@@ -1,0 +1,301 @@
+{
+  "countries": [
+    "India",
+    "United States",
+    "Mexico",
+    "Panama",
+    "Argentina",
+    "Costa Rica",
+    "Egypt",
+    "Switzerland",
+    "Australia",
+    "China"
+  ],
+  "cities": [
+    "Bangalore",
+    "Chennai",
+    "Gurugram",
+    "Hyderabad",
+    "Indore",
+    "Mumbai",
+    "Noida",
+    "Pune"
+  ],
+  "city_country": {
+    "Hyderabad": "India",
+    "Pune": "India",
+    "Chennai": "India",
+    "Indore": "India",
+    "Mumbai": "India",
+    "Bangalore": "India",
+    "Gurugram": "India",
+    "Noida": "India"
+  },
+  "skills": [
+    ".Net",
+    "Android",
+    "BA",
+    "DevOps",
+    "Java",
+    "PM",
+    "ReactJS",
+    "iOS"
+  ],
+  "projects": [
+    ".Com",
+    "API Migration",
+    "AVS",
+    "AVS Design",
+    "DECP",
+    "Mobility Core Support",
+    "Moved Out",
+    "Moved out",
+    "Onboard WiFi",
+    "Pilot CCS"
+  ],
+  "leave_types": [
+    {
+      "code": "WW",
+      "name": "Weekend working",
+      "color": "#8E44AD"
+    },
+    {
+      "code": "P",
+      "name": "Planned Leave",
+      "color": "#2E86C1"
+    },
+    {
+      "code": "HP",
+      "name": "Half Day Planned/Sick Leave",
+      "color": "#5DADE2"
+    },
+    {
+      "code": "C",
+      "name": "Comp Off",
+      "color": "#16A085"
+    },
+    {
+      "code": "TP",
+      "name": "Tentative Plan Leave",
+      "color": "#F39C12"
+    },
+    {
+      "code": "H",
+      "name": "Company Holiday",
+      "color": "#E74C3C"
+    },
+    {
+      "code": "SL",
+      "name": "Full Day Sick Leave/Emergency Leave",
+      "color": "#C0392B"
+    },
+    {
+      "code": "ML",
+      "name": "Maternity Leave",
+      "color": "#D98880"
+    },
+    {
+      "code": "PL",
+      "name": "Paternity Leave",
+      "color": "#7FB3D5"
+    },
+    {
+      "code": "RL",
+      "name": "Restricted Leave/Floating Holiday",
+      "color": "#F7DC6F"
+    }
+  ],
+  "holidays": [
+    {
+      "date": "2026-01-26",
+      "name": "Republic Day",
+      "country": "India",
+      "cities": [
+        "Bangalore",
+        "Chennai",
+        "Hyderabad"
+      ]
+    },
+    {
+      "date": "2026-10-02",
+      "name": "Gandhi Jayanti",
+      "country": "India",
+      "cities": [
+        "Bangalore",
+        "Chennai",
+        "Hyderabad"
+      ]
+    },
+    {
+      "date": "2026-01-01",
+      "name": "New Year",
+      "country": "India",
+      "cities": [
+        "Bangalore",
+        "Chennai",
+        "Hyderabad"
+      ]
+    },
+    {
+      "date": "2026-01-15",
+      "name": "Makar Sankranti / Pongal / Bihu",
+      "country": "India",
+      "cities": [
+        "Bangalore",
+        "Chennai",
+        "Hyderabad"
+      ]
+    },
+    {
+      "date": "2026-03-03",
+      "name": "Dolyatra",
+      "country": "India",
+      "cities": null
+    },
+    {
+      "date": "2026-03-04",
+      "name": "Holi",
+      "country": "India",
+      "cities": null
+    },
+    {
+      "date": "2026-03-19",
+      "name": "Ugadi / Gudi Padwa / Cheti Chand",
+      "country": "India",
+      "cities": [
+        "Bangalore",
+        "Hyderabad"
+      ]
+    },
+    {
+      "date": "2026-03-26",
+      "name": "Ram Navami",
+      "country": "India",
+      "cities": null
+    },
+    {
+      "date": "2026-03-31",
+      "name": "Mahavir Jayanti",
+      "country": "India",
+      "cities": null
+    },
+    {
+      "date": "2026-04-03",
+      "name": "Good Friday",
+      "country": "India",
+      "cities": null
+    },
+    {
+      "date": "2026-04-14",
+      "name": "Tamil New Year/Vishu",
+      "country": "India",
+      "cities": [
+        "Chennai"
+      ]
+    },
+    {
+      "date": "2026-04-15",
+      "name": "Bengali New Year",
+      "country": "India",
+      "cities": null
+    },
+    {
+      "date": "2026-05-01",
+      "name": "May Day / Maharashtra Day/Buddha Purnima",
+      "country": "India",
+      "cities": [
+        "Bangalore",
+        "Chennai",
+        "Hyderabad"
+      ]
+    },
+    {
+      "date": "2026-05-27",
+      "name": "Id-ul-Zuha(Bakrid)",
+      "country": "India",
+      "cities": [
+        "Bangalore",
+        "Chennai",
+        "Hyderabad"
+      ]
+    },
+    {
+      "date": "2026-06-26",
+      "name": "Muharram",
+      "country": "India",
+      "cities": null
+    },
+    {
+      "date": "2026-08-26",
+      "name": "Onam/Id-E-Milad",
+      "country": "India",
+      "cities": null
+    },
+    {
+      "date": "2026-08-28",
+      "name": "Rakshabandhan",
+      "country": "India",
+      "cities": null
+    },
+    {
+      "date": "2026-09-04",
+      "name": "Janmashtami",
+      "country": "India",
+      "cities": null
+    },
+    {
+      "date": "2026-09-14",
+      "name": "Ganesh Chaturthi",
+      "country": "India",
+      "cities": [
+        "Bangalore",
+        "Chennai",
+        "Hyderabad"
+      ]
+    },
+    {
+      "date": "2026-10-19",
+      "name": "Ashtami/Maha Navami/Ayudha Pooja",
+      "country": "India",
+      "cities": null
+    },
+    {
+      "date": "2026-10-20",
+      "name": "Dusshera",
+      "country": "India",
+      "cities": [
+        "Bangalore",
+        "Chennai",
+        "Hyderabad"
+      ]
+    },
+    {
+      "date": "2026-11-09",
+      "name": "Govardhan Puja",
+      "country": "India",
+      "cities": null
+    },
+    {
+      "date": "2026-11-11",
+      "name": "Bhai Dooj",
+      "country": "India",
+      "cities": null
+    },
+    {
+      "date": "2026-11-24",
+      "name": "Guru Nanak Jayanti",
+      "country": "India",
+      "cities": null
+    },
+    {
+      "date": "2026-12-25",
+      "name": "Christmas",
+      "country": "India",
+      "cities": [
+        "Bangalore",
+        "Chennai",
+        "Hyderabad"
+      ]
+    }
+  ]
+}
